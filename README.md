@@ -30,7 +30,7 @@ MoodFit was built as the software artefact for a BSc (Hons) Computing dissertati
 
 ### Requirements
 
-- [Node.js](https://nodejs.org/) 20 or later (includes npm)
+- [Node.js](https://nodejs.org/) 22.6 or later (includes npm)
 - A modern browser (Chrome, Edge or Firefox)
 - A webcam, only if you want to use the face check-in
 
@@ -51,6 +51,7 @@ Open the local address shown in the terminal (usually http://localhost:5173) and
 |---|---|
 | `npm run build` | Type-checks and builds a production version into `dist/` |
 | `npm run preview` | Serves the production build locally |
+| `npm test` | Runs the 24 unit tests in `tests/moodfit.test.mjs` |
 | `npm run lint` | Runs the linter |
 
 ## Project structure
@@ -78,7 +79,17 @@ src/
     ├── classes.ts                 # Class timetable data
     ├── bookings.ts                # Class bookings
     └── membership.ts              # Membership plans
+tests/
+└── moodfit.test.mjs               # Unit tests (text, face, recommendations, streak/insight)
 ```
+
+## Testing
+
+`npm test` runs 24 unit tests covering the text classifier (T1–T9), face classifier (F1–F5), recommendations (R1–R5) and streak/insight logic (S1–S5). **20 pass and 4 fail on purpose.** The failing tests (T7, T8, T9, S5) document known defects rather than hiding them:
+
+- **T7, T8:** negation is not handled ("not good" is read as positive).
+- **T9:** partial-word matching ("book" matches "ok").
+- **S5:** the low-mood weekly insight states a fixed "6 minutes longer" figure that the app never measures.
 
 ## Privacy
 
