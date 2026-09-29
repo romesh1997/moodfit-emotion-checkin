@@ -1,0 +1,30 @@
+.booking-receipt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  background: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: 1rem 1.1rem;
+  text-align: left;
+}
+
+.booking-receipt-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.booking-receipt-label {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+}
+
+.booking-receipt-value {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  text-align: right;
+}

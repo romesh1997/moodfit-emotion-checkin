@@ -1,0 +1,37 @@
+.mood-orb-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mood-orb {
+  border-radius: 50%;
+  transition: background 0.6s ease;
+  box-shadow: var(--shadow-md);
+}
+
+.mood-orb--low {
+  background: radial-gradient(circle at 35% 30%, #b7c2cf 0%, var(--mood-low) 55%, var(--mood-low-dark) 100%);
+}
+
+.mood-orb--calm {
+  background: radial-gradient(circle at 35% 30%, #a8ece4 0%, var(--mood-calm) 55%, var(--mood-calm-dark) 100%);
+}
+
+.mood-orb--balanced {
+  background: radial-gradient(circle at 35% 30%, #cac1ec 0%, var(--mood-balanced) 55%, var(--mood-balanced-dark) 100%);
+}
+
+.mood-orb--energised {
+  background: radial-gradient(circle at 35% 30%, #ffcdb8 0%, var(--mood-energised) 55%, var(--mood-energised-dark) 100%);
+}
+
+.mood-orb--pulsing {
+  animation: orb-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes orb-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.045); }
+}
